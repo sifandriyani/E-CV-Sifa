@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sifa Andriyani | E-CV</title>
+    <meta name="description" content="Portfolio and e-CV of Sifa Andriyani, Information Systems student, UI/UX Designer &amp; Web Developer.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&amp;family=Nunito:wght@400;600;700;800&amp;family=Pixelify+Sans:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome (dipakai buat icon Skills & Tools, tanpa gambar) -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Tambahan e-CV: Education, Organization, Soft Skills, Contact -->
+    <style>
+/* =========================================
+   TAMBAHAN E-CV
+   Tempel di paling bawah css/style.css
+   Memakai variabel --cream, --blue, --red
+   yang sudah ada.
+========================================= */
+
+
+/* ---------- Badge judul (sama dengan Experience / Certificates) ---------- */
+
+.education-heading,
+.organization-heading {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 60px;
+}
+
+.education-badge,
+.organization-badge {
+    position: relative;
+
+    width: min(260px, 80vw);
+}
+
+.education-badge-bg,
+.organization-badge-bg {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+.education-badge-text,
+.organization-badge-text {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: rotate(-1deg);
+
+    font-family: "Kalam", cursive;
+    font-size: clamp(22px, 2.8vw, 32px);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    color: var(--blue);
+}
+
+
+/* =========================================
+   EDUCATION
+========================================= */
+
+.education {
+    width: 100%;
+
+    background: var(--cream);
+
+    padding: 60px 7% 100px;
+}
+
+.edu-card {
+    max-width: 860px;
+
+    margin: 0 auto;
+
+    background: var(--cream);
+
+    border: 3px dashed var(--blue);
+    border-radius: 28px;
+
+    padding: 32px 38px;
+
+    box-shadow: 0 14px 28px rgba(3, 109, 154, 0.14);
+}
+
+.edu-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+
+    margin-bottom: 14px;
+}
+
+.edu-top h3 {
+    margin-bottom: 6px;
+
+    font-family: "Nunito", sans-serif;
+    font-size: clamp(19px, 2.4vw, 24px);
+    font-weight: 800;
+
+    color: var(--blue);
+}
+
+.edu-school {
+    font-family: "Nunito", sans-serif;
+    font-size: clamp(15px, 1.8vw, 17.5px);
+    font-weight: 700;
+    line-height: 1.5;
+
+    color: var(--red);
+}
+
+.edu-date {
+    flex-shrink: 0;
+
+    font-family: "Nunito", sans-serif;
+    font-size: clamp(14px, 1.6vw, 16px);
+    font-weight: 800;
+
+    color: var(--blue);
+}
+
+.edu-gpa {
+    margin-bottom: 22px;
+
+    font-family: "Nunito", sans-serif;
+    font-size: clamp(15px, 1.8vw, 17.5px);
+    font-weight: 700;
+
+    color: var(--red);
+}
+
+.edu-gpa strong {
+    font-weight: 800;
+
+    color: var(--blue);
+}
+
+.edu-label {
+    margin-bottom: 10px;
+
+    font-family: "Kalam", cursive;
+    font-size: 18px;
+    font-weight: 700;
+
+    color: var(--blue);
+}
+
+.edu-tags,
+.extra-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.edu-tags span,
+.extra-tags span {
+    display: inline-block;
+
+    border: 2px solid var(--blue);
+    border-radius: 999px;
+
+    padding: 6px 16px;
+
+    font-family: "Nunito", sans-serif;
+    font-size: 12.5px;
+    font-weight: 700;
+
+    color: var(--red);
+}
+
+
+/* =========================================
+   ORGANIZATION
+========================================= */
+
+.organization {
+    width: 100%;
+
+    background: var(--cream);
+
+    padding: 60px 7% 100px;
+}
+
+.org-list {
+    max-width: 860px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 34px;
+}
+
+.org-card {
+    background: var(--cream);
+
+    border: 3px dashed var(--blue);
+    border-radius: 28px;
+
+    padding: 28px 34px;
+
+    box-shadow: 0 14px 28px rgba(3, 109, 154, 0.14);
+}
+
+.org-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+
+    margin-bottom: 6px;
+}
+
+.org-top h3 {
+    font-family: "Nunito", sans-serif;
+    font-size: clamp(19px, 2.4vw, 24px);
+    font-weight: 800;
+
+    color: var(--blue);
+}
+
+.org-date {
+    flex-shrink: 0;
+
+    font-family: "Nunito", sans-serif;
+    font-size: clamp(14px, 1.6vw, 16px);
+    font-weight: 800;
+
+    color: var(--blue);
+}
+
+.org-place {
+    margin-bottom: 14px;
+
+    font-family: "Nunito", sans-serif;
+    font-size: clamp(15px, 1.8vw, 17.5px);
+    font-weight: 700;
+    line-height: 1.5;
+
+    color: var(--red);
+}
+
+.org-card ul {
+    padding-left: 20px;
+}
+
+.org-card li {
+    margin-bottom: 4px;
+
+    font-family: "Nunito", sans-serif;
+    font-size: clamp(14.5px, 1.7vw, 16.5px);
+    font-weight: 600;
+    line-height: 1.55;
+
+    color: var(--red);
+}
+
+
+/* =========================================
+   SOFT SKILLS & LANGUAGES (di dalam section Skills)
+========================================= */
+
+.extra-tags {
+    max-width: 860px;
+
+    margin: 0 auto;
+    padding: 0 7%;
+
+    justify-content: center;
+}
+
+
+/* =========================================
+   KONTAK TERLIHAT
+========================================= */
+
+.contact-details {
+    list-style: none;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 28px;
+
+    margin: 30px auto 0;
+    padding: 0 7%;
+}
+
+.contact-details li {
+    font-family: "Nunito", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+
+    color: var(--blue);
+}
+
+.contact-details i {
+    margin-right: 6px;
+
+    color: var(--red);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 560px) {
+
+    .education,
+    .organization {
+        padding: 45px 6% 70px;
+    }
+
+    .edu-card,
+    .org-card {
+        padding: 24px 22px;
+    }
+
+    .edu-top,
+    .org-top {
+        flex-direction: column;
+        gap: 4px;
+    }
+}
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- =========================
+         BOTTOM NAVBAR
+    ========================== -->
+    <nav class="bottom-nav" aria-label="Main navigation">
+
+        <a href="#home" class="bottom-nav-link" data-section="home">
+            <i class="fa-solid fa-house"></i>
+            <span>Sifaadr</span>
+        </a>
+
+        <a href="#about" class="bottom-nav-link" data-section="about">
+            <i class="fa-solid fa-user"></i>
+            <span>About</span>
+        </a>
+
+        <a href="#education" class="bottom-nav-link" data-section="education">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>Education</span>
+        </a>
+
+        <a href="#experience" class="bottom-nav-link" data-section="experience">
+            <i class="fa-solid fa-briefcase"></i>
+            <span>Experience</span>
+        </a>
+
+        <a href="#project" class="bottom-nav-link" data-section="project">
+            <i class="fa-solid fa-diagram-project"></i>
+            <span>Projects</span>
+        </a>
+
+        <a href="#contact" class="bottom-nav-link" data-section="contact">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO / HOME SECTION
+    ========================== -->
+    <section class="hero" id="home">
+
+
+        <!-- =========================
+             LEFT POLAROID FRAME
+        ========================== -->
+        <div class="photo-frame">
+
+            <img
+                src="assets/tempat-foto.png"
+                class="frame-background"
+                alt="Photo frame"
+            >
+
+            <!-- Photo 1 -->
+            <div class="photo photo-one">
+                <img
+                    src="assets/hati-merah.png"
+                    class="heart heart-one"
+                    alt=""
+                >
+
+                <img
+                    src="assets/kue.png"
+                    class="small-object cake"
+                    alt="Cake"
+                >
+
+                <img
+                    src="assets/cewe-boneka.png"
+                    class="character character-one"
+                    alt="Pixel character"
+                >
+
+                <img
+                    src="assets/sandwich.jpg"
+                    class="small-object sandwich"
+                    alt="Sandwich"
+                >
+            </div>
+
+
+            <!-- Photo 2 -->
+            <div class="photo photo-two">
+
+                <img
+                    src="assets/hati-merah.png"
+                    class="heart heart-two"
+                    alt=""
+                >
+
+                <img
+                    src="assets/cewe-biru.png"
+                    class="character character-two"
+                    alt="Pixel character"
+                >
+
+                <img
+                    src="assets/note-lagu.png"
+                    class="music-note"
+                    alt="Music note"
+                >
+
+                <img
+                    src="assets/gitar.png"
+                    class="guitar"
+                    alt="Guitar"
+                >
+            </div>
+
+
+            <!-- Photo 3 -->
+            <div class="photo photo-three">
+
+                <img
+                    src="assets/hati-merah.png"
+                    class="heart heart-three"
+                    alt=""
+                >
+
+                <img
+                    src="assets/cewe-topi.png"
+                    class="character character-three"
+                    alt="Pixel character"
+                >
+
+                <img
+                    src="assets/buku.jpg"
+                    class="book"
+                    alt="Book"
+                >
+
+                <img
+                    src="assets/lukis.png"
+                    class="painting"
+                    alt="Painting"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             RIGHT CONTENT
+        ========================== -->
+        <main class="hero-content">
+
+            <!-- Greeting -->
+            <div class="greeting-wrapper">
+                <h2 class="greeting">
+                    Nice To Meet You
+                </h2>
+
+                <svg
+                    class="greeting-line"
+                    viewBox="0 0 600 100"
+                    preserveAspectRatio="none"
+                    aria-hidden="true"
+                >
+                    <path
+                        pathLength="1000"
+                        d="
+                        M 10 18
+                        C 110 8, 235 10, 330 25
+                        C 390 35, 420 48, 420 62
+                        C 420 75, 405 82, 430 87
+                        C 465 94, 530 91, 590 90
+                    "/>
+                </svg>
+            </div>
+
+
+            <!-- Main title (per huruf, animasi ketik murni CSS) -->
+            <h1 class="portfolio-title" aria-label="E-CV">
+                <span aria-hidden="true"><span class="letter">E</span><span class="letter">-</span><span class="letter">C</span><span class="letter">V</span></span>
+            </h1>
+
+
+            <!-- Name -->
+            <div class="name-wrapper">
+
+                <h2 class="name">
+                    Sifa Andriyani
+                </h2>
+
+                <img
+                    src="assets/petik-3.png"
+                    class="petik"
+                    alt=""
+                >
+
+            </div>
+
+
+            <!-- Profession -->
+            <p class="profession">
+                UI/UX Designer &amp; Web Development
+            </p>
+
+
+            <!-- =========================
+                 BUTTONS
+            ========================== -->
+            <div class="hero-buttons">
+
+                <div class="button-wrapper project-wrapper">
+
+                    <img
+                        src="assets/kucing-merah.png"
+                        class="cat-decor project-cat"
+                        alt=""
+                    >
+
+                    <a href="#project" class="hero-button">
+                        My Project
+                    </a>
+
+                </div>
+
+
+                <div class="button-wrapper">
+
+                    <a href="assets/CV_Sifa_Andriyani.pdf" class="hero-button" download="CV_Sifa_Andriyani.pdf">
+                    Download CV
+                </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Description -->
+            <p class="hero-description">
+                Let's build something meaningful together.
+            </p>
+
+
+            <!-- Contact -->
+            <div class="contact-wrapper">
+
+                <img
+                    src="assets/kucing-putih.png"
+                    class="cat-decor contact-cat"
+                    alt=""
+                >
+
+                <a href="#contact" class="hero-button contact-button">
+                    Get In Touch
+                </a>
+
+            </div>
+
+        </main>
+
+    </section>
+
+
+    <!-- =========================
+         BOTTOM MARQUEE
+    ========================== -->
+    <div class="bottom-marquee">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                ★ UI/UX DESIGNER ★ WEBSITE DEVELOPMENT ★
+                UI/UX DESIGNER ★ WEBSITE DEVELOPMENT ★
+                UI/UX DESIGNER ★ WEBSITE DEVELOPMENT ★
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+                ★ UI/UX DESIGNER ★ WEBSITE DEVELOPMENT ★
+                UI/UX DESIGNER ★ WEBSITE DEVELOPMENT ★
+                UI/UX DESIGNER ★ WEBSITE DEVELOPMENT ★
+            </div>
+        </div>
+    </div>
+
+
+    <!-- =========================
+         ABOUT ME SECTION
+    ========================== -->
+    <section class="about" id="about">
+
+        <div class="about-content">
+
+            <!-- Foto + rubah (kiri) -->
+            <div class="about-photo-wrapper reveal-left">
+
+                <img
+                    src="assets/rubah-gigit.png"
+                    class="about-fox"
+                    alt=""
+                >
+
+                <div class="about-polaroid">
+
+                    <img
+                        src="assets/profil.png"
+                        class="about-photo"
+                        alt="Photo of Sifa Andriyani"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- Greeting + nama + bacaan (kanan) -->
+            <div class="about-profile reveal">
+
+                <div class="about-heading-text">
+
+                    <div class="about-greet">
+                        <span class="about-greet-text">Hi I'm,</span>
+
+                        <img
+                            src="assets/emot.png"
+                            class="about-emot"
+                            alt=""
+                        >
+                    </div>
+
+                    <h3 class="about-name">Sifa Andriyani</h3>
+
+                </div>
+
+                <div class="about-note">
+                    <img
+                        src="assets/kertas.png"
+                        class="note-bg"
+                        alt="Note paper"
+                    >
+
+                    <p class="note-text">
+                        I'm a 7th-semester Information Systems student passionate about UI/UX Design and Web Development. I enjoy turning ideas into intuitive designs and responsive websites while continuously improving my design, development, and teamwork skills through academic projects.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS & TOOLS SECTION
+    ========================== -->
+    <section class="skills-tools" id="skills">
+
+        <!-- Badge judul: navbar.jpg (bingkai coretan) + bebek.png -->
+        <div class="skills-tools-heading reveal">
+
+            <div class="skills-badge">
+
+                <img
+                    src="assets/bebek.png"
+                    class="skills-duck"
+                    alt="Duck"
+                >
+
+                <div class="skills-badge-box">
+
+                    <img
+                        src="assets/navbar.jpg"
+                        class="skills-badge-bg"
+                        alt="Badge background"
+                    >
+
+                    <h2 class="skills-badge-text">Skills &amp; Tools</h2>
+
+                </div>
+
+            </div>
+
+            <p class="skills-tools-subtitle">
+                A quick look at the languages, frameworks, and design tools I use to bring ideas to life.
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             SKILLS ROW (marquee ke kiri)
+        ========================== -->
+        <div class="icon-group reveal">
+
+            <p class="group-label">★ Skills</p>
+
+            <div class="icon-marquee">
+
+                <div class="icon-marquee-track track-left">
+
+                    <div class="icon-marquee-content">
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-solid fa-palette"></i></div>
+                            <span class="icon-name">UI/UX Design</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-solid fa-laptop-code"></i></div>
+                            <span class="icon-name">Frontend Development</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-brands fa-html5"></i></div>
+                            <span class="icon-name">HTML5</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-brands fa-css3-alt"></i></div>
+                            <span class="icon-name">CSS3</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-brands fa-python"></i></div>
+                            <span class="icon-name">Python</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-brands fa-js"></i></div>
+                            <span class="icon-name">JavaScript</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-solid fa-mobile-screen"></i></div>
+                            <span class="icon-name">Responsive Web Design</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-solid fa-pen-ruler"></i></div>
+                            <span class="icon-name">Wireframing</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-solid fa-diagram-project"></i></div>
+                            <span class="icon-name">Prototyping</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-solid fa-swatchbook"></i></div>
+                            <span class="icon-name">User Interface Design</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-solid fa-database"></i></div>
+                            <span class="icon-name">Database Management</span>
+                        </div>
+
+                    </div>
+
+                    <div class="icon-marquee-content" aria-hidden="true">
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-solid fa-palette"></i></div>
+                            <span class="icon-name">UI/UX Design</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-solid fa-laptop-code"></i></div>
+                            <span class="icon-name">Frontend Development</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-brands fa-html5"></i></div>
+                            <span class="icon-name">HTML5</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-brands fa-css3-alt"></i></div>
+                            <span class="icon-name">CSS3</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-brands fa-python"></i></div>
+                            <span class="icon-name">Python</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-brands fa-js"></i></div>
+                            <span class="icon-name">JavaScript</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-solid fa-mobile-screen"></i></div>
+                            <span class="icon-name">Responsive Web Design</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-solid fa-pen-ruler"></i></div>
+                            <span class="icon-name">Wireframing</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-solid fa-diagram-project"></i></div>
+                            <span class="icon-name">Prototyping</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-solid fa-swatchbook"></i></div>
+                            <span class="icon-name">User Interface Design</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-solid fa-database"></i></div>
+                            <span class="icon-name">Database Management</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             TOOLS ROW (marquee ke kanan)
+        ========================== -->
+        <div class="icon-group reveal">
+
+            <p class="group-label">★ Tools</p>
+
+            <div class="icon-marquee">
+
+                <div class="icon-marquee-track track-right">
+
+                    <div class="icon-marquee-content">
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-brands fa-figma"></i></div>
+                            <span class="icon-name">Figma</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-solid fa-code"></i></div>
+                            <span class="icon-name">Visual Studio Code</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-brands fa-bootstrap"></i></div>
+                            <span class="icon-name">Bootstrap</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-brands fa-laravel"></i></div>
+                            <span class="icon-name">Laravel</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-brands fa-flutter"></i></div>
+                            <span class="icon-name">Flutter</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-solid fa-database"></i></div>
+                            <span class="icon-name">MySQL</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-brands fa-github"></i></div>
+                            <span class="icon-name">GitHub</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-solid fa-server"></i></div>
+                            <span class="icon-name">Laragon</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-brands fa-microsoft"></i></div>
+                            <span class="icon-name">Microsoft Office</span>
+                        </div>
+
+                    </div>
+
+                    <div class="icon-marquee-content" aria-hidden="true">
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-brands fa-figma"></i></div>
+                            <span class="icon-name">Figma</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-solid fa-code"></i></div>
+                            <span class="icon-name">Visual Studio Code</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-brands fa-bootstrap"></i></div>
+                            <span class="icon-name">Bootstrap</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-brands fa-laravel"></i></div>
+                            <span class="icon-name">Laravel</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-brands fa-flutter"></i></div>
+                            <span class="icon-name">Flutter</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-solid fa-database"></i></div>
+                            <span class="icon-name">MySQL</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-brands fa-github"></i></div>
+                            <span class="icon-name">GitHub</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-solid fa-server"></i></div>
+                            <span class="icon-name">Laragon</span>
+                        </div>
+
+                        <div class="icon-item">
+                            <div class="icon-circle"><i class="fa-brands fa-microsoft"></i></div>
+                            <span class="icon-name">Microsoft Office</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- =========================
+             SOFT SKILLS & LANGUAGES
+        ========================== -->
+
+        <div class="icon-group reveal">
+            <p class="group-label">★ Soft Skills</p>
+            <div class="extra-tags">
+                <span>Communication</span>
+                <span>Teamwork</span>
+                <span>Time Management</span>
+                <span>Problem Solving</span>
+                <span>Adaptability</span>
+            </div>
+        </div>
+
+        <div class="icon-group reveal">
+            <p class="group-label">★ Languages</p>
+            <div class="extra-tags">
+                <span>Indonesian (Native)</span>
+                <span>English (Intermediate)</span>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCATION SECTION
+    ========================== -->
+
+    <section class="education" id="education">
+
+        <div class="education-heading reveal">
+            <div class="education-badge">
+                <img src="assets/navbar.jpg" class="education-badge-bg" alt="Badge background">
+                <h2 class="education-badge-text">Education</h2>
+            </div>
+        </div>
+
+        <article class="edu-card reveal">
+
+            <div class="edu-top">
+                <div>
+                    <h3>Bachelor of Information Systems</h3>
+                    <p class="edu-school">Universitas Bina Sarana Informatika, South Tangerang, Indonesia</p>
+                </div>
+                <span class="edu-date">2023 &ndash; Present</span>
+            </div>
+
+            <p class="edu-gpa">GPA <strong>3.81</strong> / 4.00</p>
+
+            <p class="edu-label">Relevant courses</p>
+            <div class="edu-tags">
+                <span>UI/UX Design</span>
+                <span>Web Programming</span>
+                <span>Logic &amp; Algorithms</span>
+                <span>Programming Fundamentals</span>
+                <span>Software Quality Assurance</span>
+                <span>Information Systems Modeling</span>
+                <span>Information Systems Design</span>
+                <span>Management Information Systems</span>
+                <span>Digital Transformation</span>
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- =========================
+         EXPERIENCE SECTION
+         (kartu bertumpuk / stacked cards pakai
+         position: sticky, dibantu efek scale-fade
+         dari JS pas kartu mulai ketutup kartu
+         berikutnya - lihat js/script.js)
+    ========================== -->
+    <section class="experience" id="experience">
+
+        <!-- Badge judul "Experience" (frame sama kayak badge Skills & Tools) -->
+        <div class="experience-heading reveal">
+
+            <div class="experience-badge">
+
+                <img
+                    src="assets/navbar.jpg"
+                    class="experience-badge-bg"
+                    alt="Badge background"
+                >
+
+                <h2 class="experience-badge-text">Experience</h2>
+
+            </div>
+
+        </div>
+
+
+        <!-- Timeline (garis di kiri "tergambar" sendiri pas discroll,
+             lihat css/style.css & js/script.js) -->
+        <div class="experience-timeline">
+
+            <div class="timeline-line">
+                <div class="timeline-line-fill"></div>
+            </div>
+
+            <div class="experience-list">
+
+            <!-- Kartu 1 -->
+            <article class="exp-card reveal-left">
+                <span class="exp-dot"></span>
+                <div class="exp-date">August 2025</div>
+                <div class="exp-body">
+                    <div class="exp-photo">
+                        <img src="assets/experience/mengajar-yayasan.png" alt="Logistics Committee HIMSI Mengajar 2" onerror="this.style.display='none'">
+                    </div>
+                    <div class="exp-text">
+                        <h3>Logistics Committee &ldquo;HIMSI Mengajar 2&rdquo;</h3>
+                        <p>Prepared and ensured the availability of equipment throughout the learning activities at Daarul Musriah Orphan &amp; Dhuafa Foundation, supporting smooth learning sessions and educational games.</p>
+                    </div>
+                </div>
+            </article>
+
+            
+
+            <!-- Kartu 3 -->
+            <article class="exp-card reveal-left">
+                <span class="exp-dot"></span>
+                <div class="exp-date">June 2025</div>
+                <div class="exp-body">
+                    <div class="exp-photo">
+                        <img src="assets/experience/seminar-kemanusiaan.jpeg" alt="Speaker Humanity in Islamic Teachings Seminar" onerror="this.style.display='none'">
+                    </div>
+                    <div class="exp-text">
+                        <h3>Speaker, &ldquo;Humanity in Islamic Teachings&rdquo; Seminar</h3>
+                        <p>Delivered an engaging educational session to students at Madrasah Qismulayaly, Cigaten, introducing key values of humanity in Islamic teachings.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Kartu 4 -->
+            <article class="exp-card reveal-left">
+                <span class="exp-dot"></span>
+                <div class="exp-date">May 2025</div>
+                <div class="exp-body">
+                    <div class="exp-photo">
+                        <img src="assets/experience/sosialisasi.png" alt="Speaker Chicken Consumption Trend Analysis and Power BI Learning Seminar" onerror="this.style.display='none'">
+                    </div>
+                    <div class="exp-text">
+                        <h3>Speaker &ldquo;Chicken Consumption Trend Analysis &amp; Power BI Learning&rdquo; Seminar</h3>
+                        <p>Guided members of the Student Council at SMAN 28 Tangerang Regency in understanding data processing and creating data visualizations using Microsoft Power BI.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Kartu 5 -->
+            <article class="exp-card reveal-left">
+                <span class="exp-dot"></span>
+                <div class="exp-date">September 2024</div>
+                <div class="exp-body">
+                    <div class="exp-photo">
+                        <img src="assets/experience/kelas-coding.png" alt="Event Committee Member Class Coding V5" onerror="this.style.display='none'">
+                    </div>
+                    <div class="exp-text">
+                        <h3>Event Committee Member &ldquo;Class Coding V5&rdquo;</h3>
+                        <p>Supported the preparation and execution of a programming training program for students at BSI BSD, helping coordinate the event according to the schedule.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Kartu 6 -->
+            <article class="exp-card reveal-left">
+                <span class="exp-dot"></span>
+                <div class="exp-date">August 2024</div>
+                <div class="exp-body">
+                    <div class="exp-photo">
+                        <img src="assets/experience/mengajar-sd.png" alt="Event Committee Member HIMSI Mengajar" onerror="this.style.display='none'">
+                    </div>
+                    <div class="exp-text">
+                        <h3>Event Committee Member &ldquo;HIMSI Mengajar&rdquo;</h3>
+                        <p>Introduced basic information technology and computer skills to students at SDN Cilenggang 01 through four learning sessions.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Kartu 7 -->
+            <article class="exp-card reveal-left">
+                <span class="exp-dot"></span>
+                <div class="exp-date">May 2024</div>
+                <div class="exp-body">
+                    <div class="exp-photo">
+                        <img src="assets/experience/seminar.jpeg" alt="Speaker Learning Through Traditional Games Seminar" onerror="this.style.display='none'">
+                    </div>
+                    <div class="exp-text">
+                        <h3>Speaker &ldquo;Learning Through Traditional Games&rdquo; Seminar</h3>
+                        <p>Delivered an educational session for children at Madrasah Qismulayaly, Cigaten, combining learning activities with traditional games in an engaging and enjoyable way.</p>
+                    </div>
+                </div>
+            </article>
+
+            
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ORGANIZATION SECTION
+    ========================== -->
+
+    <section class="organization" id="organization">
+
+        <div class="organization-heading reveal">
+            <div class="organization-badge">
+                <img src="assets/navbar.jpg" class="organization-badge-bg" alt="Badge background">
+                <h2 class="organization-badge-text">Organization</h2>
+            </div>
+        </div>
+
+        <div class="org-list">
+
+            <article class="org-card reveal-left">
+                <div class="org-top">
+                    <h3>Treasurer</h3>
+                    <span class="org-date">June 2025</span>
+                </div>
+                <p class="org-place">Board of Management (BPH), HIMSI UBSI BSD Branch</p>
+                <ul>
+                    <li>Managed financial records and administration for organizational activities.</li>
+                    <li>Handled event funds in an orderly and accountable way.</li>
+                </ul>
+            </article>
+
+            <article class="org-card reveal-left">
+                <div class="org-top">
+                    <h3>Education Coordinator</h3>
+                    <span class="org-date">March 2024</span>
+                </div>
+                <p class="org-place">Information Systems Student Association (HIMSI), UBSI BSD Branch</p>
+                <ul>
+                    <li>Managed education programs and member development.</li>
+                    <li>Took an active role in student organization activities.</li>
+                </ul>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECT SECTION
+         (kartu bertumpuk: 1 project nempel dulu,
+         baru pas discroll kartu berikutnya numpuk
+         di atasnya - persis pola yang sebelumnya
+         dipakai di section Experience)
+    ========================== -->
+    <section class="project" id="project">
+
+        <!-- Badge judul "Project" -->
+        <div class="project-heading reveal">
+
+            <div class="project-badge">
+
+                <div class="project-badge-box">
+
+                    <img
+                        src="assets/navbar.jpg"
+                        class="project-badge-bg"
+                        alt="Badge background"
+                    >
+
+                    <h2 class="project-badge-text">Project</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Tumpukan kartu project (urut dari yang paling baru) -->
+        <div class="project-stack">
+
+            <!-- Kartu 1 -->
+            <article class="project-card project-reveal" style="--i:0">
+                <div class="project-card-inner">
+                    <div class="project-media">
+                        <span class="project-date">July 2026</span>
+                        <div class="project-thumb">
+                            <img src="assets/project/varsha.png" alt="Website Varsha" onerror="this.style.display='none'">
+                        </div>
+                        <a href="https://website-e-commerce-varsha-bag.vercel.app/" class="project-view-btn" target="_blank" rel="noopener">View</a>
+                    </div>
+                    <div class="project-info">
+                        <h3>Website Varsha</h3>
+                        <p>Varsha Bags is an e-commerce website designed to showcase a collection of bags online through a modern, responsive, and user-friendly interface. The website allows customers to easily browse and explore products across different devices.</p>
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Python</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Kartu 2 -->
+            <article class="project-card project-reveal" style="--i:1">
+                <div class="project-card-inner">
+                    <div class="project-media">
+                        <span class="project-date">July 2026</span>
+                        <div class="project-thumb">
+                            <img src="assets/project/sistem-penggajian.png" alt="Payroll Management System" onerror="this.style.display='none'">
+                        </div>
+                        <a href="https://github.com/sifandriyani/sistem-penggajian" class="project-view-btn" target="_blank" rel="noopener">View</a>
+                    </div>
+                    <div class="project-info">
+                        <h3>Payroll Management System</h3>
+                        <p>Payroll Management System is a web-based application designed to streamline employee data and payroll management. It helps administrators manage employee positions, attendance, and payroll reports in a more structured and centralized platform.</p>
+                        <div class="project-tags">
+                            <span>Laravel</span>
+                            <span>PHP</span>
+                            <span>Bootstrap</span>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Kartu 3 -->
+            <article class="project-card project-reveal" style="--i:2">
+                <div class="project-card-inner">
+                    <div class="project-media">
+                        <span class="project-date">June 2026</span>
+                        <div class="project-thumb">
+                            <img src="assets/project/selbi-salon.png" alt="Digital Salon App Design" onerror="this.style.display='none'">
+                        </div>
+                        <a href="https://www.figma.com/proto/vtiAbq64XBal2dHJzcJE94/Beauty-Salon-Website--Community-?node-id=3-2&amp;p=f&amp;t=SlbyDg9fUuFRe853-1&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=3%3A2&amp;show-proto-sidebar=1" class="project-view-btn" target="_blank" rel="noopener">View</a>
+                    </div>
+                    <div class="project-info">
+                        <h3>Digital Salon App Design</h3>
+                        <p>Selbi Salon is a website concept designed to help customers book salon services online. The design simplifies the process of selecting services, scheduling appointments, and accessing salon information in one convenient platform.</p>
+                        <div class="project-tags">
+                            <span>Figma</span>
+                            <span>Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Kartu 4 -->
+            <article class="project-card project-reveal" style="--i:3">
+                <div class="project-card-inner">
+                    <div class="project-media">
+                        <span class="project-date">June 2026</span>
+                        <div class="project-thumb">
+                            <img src="assets/project/berkah-lestari.png" alt="Ornamental Plant Decision Support System" onerror="this.style.display='none'">
+                        </div>
+                        <a href="https://github.com/sifandriyani/SPK-Berkah-Lestari" class="project-view-btn" target="_blank" rel="noopener">View</a>
+                    </div>
+                    <div class="project-info">
+                        <h3>Ornamental Plant Decision Support System</h3>
+                        <p>Berkah Lestari Decision Support System is a web-based system designed to help an ornamental plant store prioritize plant restocking using the SAW (Simple Additive Weighting) method. The system manages plant, sales, and customer demand data, then generates rankings to recommend which plants should be prioritized for restocking.</p>
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>PHP</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Kartu 5 -->
+            <article class="project-card project-reveal" style="--i:4">
+                <div class="project-card-inner">
+                    <div class="project-media">
+                        <span class="project-date">July 2024</span>
+                        <div class="project-thumb">
+                            <img src="assets/project/toko-bunga.png" alt="Flower Shop Website" onerror="this.style.display='none'">
+                        </div>
+                        <a href="https://toko-bunga-pi.vercel.app/" class="project-view-btn" target="_blank" rel="noopener">View</a>
+                    </div>
+                    <div class="project-info">
+                        <h3>Flower Shop Website</h3>
+                        <p>Blooming Serenity is an e-commerce website for a flower shop, designed to provide a seamless experience for browsing bouquets, placing orders, and completing online payments. The website features a soft and elegant design that reflects the brand's identity.</p>
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Kartu 6 -->
+            <article class="project-card project-reveal" style="--i:5">
+                <div class="project-card-inner">
+                    <div class="project-media">
+                        <span class="project-date">July 2024</span>
+                        <div class="project-thumb">
+                            <img src="assets/project/flicks.png" alt="UI/UX Design for the Flicks App" onerror="this.style.display='none'">
+                        </div>
+                        <a href="https://www.figma.com/proto/tTnC1edplx0sH2ijVjRsdQ/Flicks?node-id=2015-17&amp;starting-point-node-id=2015%3A17&amp;t=g4oC0gKpgM6nUy21-1" class="project-view-btn" target="_blank" rel="noopener">View</a>
+                    </div>
+                    <div class="project-info">
+                        <h3>UI/UX Design for the Flicks App</h3>
+                        <p>Flicks is a mobile app concept designed to help users discover movie information, including now-playing, recommended, and upcoming films. It features a simple and intuitive interface for a seamless browsing experience.</p>
+                        <div class="project-tags">
+                            <span>Figma</span>
+                            <span>UI/UX Design</span>
+                            <span>Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Kartu 7 -->
+            <article class="project-card project-reveal" style="--i:6">
+                <div class="project-card-inner">
+                    <div class="project-media">
+                        <span class="project-date">Januari 2024</span>
+                        <div class="project-thumb">
+                            <img src="assets/project/posyandu.png" alt="Posyandu Data Management System" onerror="this.style.display='none'">
+                        </div>
+                        <a href="https://www.figma.com/proto/HULLMWepwg2oqvb92IhP1K/TUGAS-KELOMPOK-SIM?node-id=2028-11&amp;p=f&amp;t=xBlb0Wk0aFVudJcL-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=162%3A65&amp;starting-point-node-id=2028%3A11" class="project-view-btn" target="_blank" rel="noopener">View</a>
+                    </div>
+                    <div class="project-info">
+                        <h3>Posyandu Data Management System</h3>
+                        <p>Posyandu Data Management is a digital application designed to help health workers manage maternal and child data more efficiently. It serves as an alternative to manual record-keeping, making data more organized, accessible, and easier to manage.</p>
+                        <div class="project-tags">
+                            <span>Figma</span>
+                            <span>UI/UX Design</span>
+                            <span>Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SERTIFIKAT SECTION
+    ========================== -->
+    <section class="certificates" id="certificates">
+
+        <!-- Badge judul "Sertifikat" (frame sama kayak badge Skills & Tools / Experience) -->
+        <div class="certificates-heading reveal">
+
+            <div class="certificates-badge">
+
+                <img
+                    src="assets/navbar.jpg"
+                    class="certificates-badge-bg"
+                    alt="Badge background"
+                >
+
+                <h2 class="certificates-badge-text">Certificates</h2>
+
+            </div>
+
+        </div>
+
+
+        <!-- Daftar kartu sertifikat -->
+        <div class="certificates-list">
+
+            <!-- Kartu 1 -->
+            <article class="cert-card">
+
+                <img
+                    src="assets/pancake.png"
+                    class="cert-decor"
+                    alt=""
+                >
+
+                <div class="cert-photo">
+                    <img src="assets/certificates/sertifikat-pelatihan.png" alt="Training Certificate: Database Design & Database Programming With SQL" onerror="this.style.display='none'">
+                </div>
+
+                <div class="cert-text">
+                    <h3>Training Certificate</h3>
+                    <p>Database Design &amp; Database Programming With SQL</p>
+                    <span class="cert-date">19 February 2024 - 14 July 2024</span>
+                </div>
+
+            </article>
+
+            <!-- Kartu 2 -->
+            <article class="cert-card">
+
+                <img
+                    src="assets/pancake.png"
+                    class="cert-decor"
+                    alt=""
+                >
+
+                <div class="cert-photo">
+                    <img src="assets/certificates/sertifikat-kompetensi.png" alt="Competency Certificate: Database Administrator" onerror="this.style.display='none'">
+                </div>
+
+                <div class="cert-text">
+                    <h3>Competency Certificate</h3>
+                    <p>Database Administrator</p>
+                    <span class="cert-date">06 March 2026</span>
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT SECTION
+    ========================== -->
+    <section class="contact" id="contact">
+
+        <div class="contact-top">
+
+            <div class="contact-text reveal">
+
+                <h2 class="connect-heading">
+                    <span class="letter">L</span><span class="letter">e</span><span class="letter">t</span><span class="letter">'</span><span class="letter">s</span><span class="letter">&nbsp;</span><span class="letter">C</span><span class="letter">o</span><span class="letter">n</span><span class="letter">n</span><span class="letter">e</span><span class="letter">c</span><span class="letter">t</span><span class="letter">!</span>
+                </h2>
+
+                <p class="contact-sub">
+                    Have an idea, project, or opportunity? Let's talk and create something great together.
+                </p>
+
+            </div>
+
+            <div class="contact-error-wrap" aria-hidden="true">
+
+                <img
+                    src="assets/error-404.jpg"
+                    class="contact-error contact-error-base"
+                    alt=""
+                >
+
+                <img
+                    src="assets/error-404.jpg"
+                    class="contact-error contact-error-glitch contact-error-glitch-a"
+                    alt=""
+                >
+
+                <img
+                    src="assets/error-404.jpg"
+                    class="contact-error contact-error-glitch contact-error-glitch-b"
+                    alt="Error 404"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- Icon kontak: langsung dari Font Awesome (sudah dipakai juga
+             di section Skills), bukan gambar, disusun "berserakan"
+             kaya bulatan di desain. Ganti href di bawah ini dengan
+             link asli kamu (nomor WA, email, username GitHub &
+             LinkedIn). -->
+        <div class="contact-icons-scatter reveal">
+
+            <a
+                href="https://wa.me/6285782289490"
+                class="contact-icon contact-icon-1"
+                target="_blank"
+                rel="noopener"
+                aria-label="WhatsApp"
+            >
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+            <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=sifaandriyani14@gmail.com"
+                class="contact-icon contact-icon-2"
+                aria-label="Email"
+            >
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
+            <a
+                href="https://github.com/sifandriyani"
+                class="contact-icon contact-icon-3"
+                target="_blank"
+                rel="noopener"
+                aria-label="GitHub"
+            >
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/sifa-andriyani-039961422"
+                class="contact-icon contact-icon-4"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+            >
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+        </div>
+
+        
+
+
+        <!-- Kucing jalan terus-menerus persis di atas garis biru
+             (garis-nya = border-top dari .contact-footer) -->
+        <div class="contact-cat-track" aria-hidden="true">
+
+            <img
+                src="assets/kucing-contact.png"
+                class="contact-walk-cat"
+                alt=""
+            >
+
+        </div>
+
+
+        <div class="contact-footer">
+
+            <span class="contact-footer-brand">Sifaadr - E-CV</span>
+
+            <span class="contact-footer-copy">&copy;2026 - sifaandriyani</span>
+
+        </div>
+
+    </section>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>

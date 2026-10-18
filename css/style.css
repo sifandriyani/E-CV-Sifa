@@ -1,0 +1,3495 @@
+/* =========================================
+   ROOT
+========================================= */
+
+:root {
+    --cream: #FFF8E7;
+    --blue: #036D9A;
+    --red: #BB240A;
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--red);
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    background: var(--cream);
+
+    display: flex;
+    align-items: center;
+
+    padding: 50px 7% 100px;
+
+    /* Catatan: overflow-x:hidden dipasangkan overflow-y:visible di sini
+       sebelumnya, tapi menurut spesifikasi CSS itu otomatis membuat
+       overflow-y jadi "auto" (bukan tetap "visible"), sehingga .hero
+       diam-diam menjadi kotak scroll tersendiri dan bisa memotong
+       konten yang digeser (seperti tombol Get In Touch). overflow-x
+       tidak perlu diulang di sini karena <body> sudah overflow-x:hidden. */
+}
+
+
+/* =========================================
+   LEFT PHOTO FRAME
+========================================= */
+
+.photo-frame {
+    position: relative;
+
+    width: 285px;
+    height: 870px;
+
+    flex-shrink: 0;
+
+    margin-left: 2%;
+
+    flex-shrink: 0;
+
+    transform: rotate(-4deg);
+    transform-origin: center center;
+}
+
+
+.frame-background {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    object-fit: contain;
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   PHOTO CONTAINERS
+========================================= */
+
+.photo {
+    position: absolute;
+
+    width: 190px;
+    height: 220px;
+
+    overflow: hidden;
+
+    z-index: 2;
+
+    /* Posisi horizontal SATU nilai untuk ketiga foto (photo-one/two/three).
+       Sebelumnya tiap foto punya "left" sendiri-sendiri (48px, 52px, 56px)
+       yang nilainya beda-beda padahal di gambar frame aslinya ketiga
+       kotak foto itu sejajar lurus - makanya kelihatan "ga rata" (makin
+       ke bawah makin geser kanan). Sekarang cukup ubah angka di sini,
+       otomatis ngefek ke ketiga foto sekaligus, ga perlu edit satu-satu. */
+    left: 54px;
+}
+
+
+/* Position each photo (cuma jarak vertikal/top, horizontal sudah
+   diatur bareng di .photo di atas) */
+
+.photo-one {
+    top: 61px;
+}
+
+.photo-two {
+    top: 329px;
+}
+
+.photo-three {
+    top: 602px;
+}
+
+
+/* =========================================
+   HEARTS
+========================================= */
+
+.heart {
+    position: absolute;
+
+    width: 68px;
+    height: auto;
+
+    object-fit: contain;
+
+    z-index: 5;
+}
+
+.heart-one {
+    top: 1px;
+    left: 61px;
+}
+
+.heart-two {
+    top: 1px;
+    left: 60px;
+}
+
+.heart-three {
+    top: 1px;
+    left: 60px;
+}
+
+
+/* =========================================
+   PIXEL CHARACTERS
+========================================= */
+
+.character {
+    position: absolute;
+
+    object-fit: contain;
+
+    z-index: 3;
+}
+
+.character-one {
+    width: 115px;
+
+    left: 45px;
+    top: 28px;
+}
+
+.character-two {
+    width: 97px;
+
+    left: 48px;
+    top: 28px;
+}
+
+.character-three {
+    width: 104px;
+
+    left: 43px;
+    top: 30px;
+}
+
+
+/* =========================================
+   OBJECTS INSIDE PHOTO 1
+========================================= */
+
+.small-object {
+    position: absolute;
+
+    object-fit: contain;
+
+    z-index: 2;
+}
+
+.cake {
+    width: 54px;
+
+    left: 35px;
+    bottom: 28px;
+}
+
+.sandwich {
+    width: 44px;
+
+    right: 5px;
+    top: 72px;
+
+    transform: rotate(25deg);
+}
+
+
+/* =========================================
+   OBJECTS INSIDE PHOTO 2
+========================================= */
+
+.music-note {
+    position: absolute;
+
+    width: 30px;
+
+    left: 18px;
+    top: 82px;
+
+    transform: rotate(26deg);
+
+    z-index: 4;
+}
+
+.guitar {
+    position: absolute;
+
+    width: 70px;
+
+    right: 10px;
+    bottom: 25px;
+
+    transform: rotate(4deg);
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   OBJECTS INSIDE PHOTO 3
+========================================= */
+
+.book {
+    position: absolute;
+
+    width: 58px;
+    height: 58px;
+
+    object-fit: cover;
+
+    right: 130px;
+    top: 55px;
+
+    transform: rotate(44deg);
+
+    z-index: 4;
+}
+
+.painting {
+    position: absolute;
+
+    width: 40px;
+    height: 35px;
+
+    object-fit: cover;
+
+    left: 90px;
+    bottom: 55px;
+
+    transform: rotate(-17deg);
+
+    z-index: 4;
+}
+
+
+/* =========================================
+   RIGHT CONTENT
+========================================= */
+
+.hero-content {
+    position: relative;
+
+    top: 40px;
+
+    width: min(850px, 65vw);
+
+    margin-left: 7%;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow: visible;
+}
+
+
+/* =========================================
+   GREETING
+========================================= */
+
+.greeting-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 65px;
+}
+
+
+.greeting {
+    font-family: "Kalam", cursive;
+    font-size: clamp(38px, 4vw, 64px);
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: var(--red);
+
+    top: -25px;
+
+    transform: rotate(5deg);
+
+    text-align: right;
+    padding-right: 3%;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* GARIS COREtAN */
+
+.greeting-line {
+    position: absolute;
+
+    width: 72%;
+    height: 80px;
+
+    right: 1%;
+    top: 50px;
+
+    overflow: visible;
+
+    z-index: 1;
+}
+
+
+.greeting-line path {
+    fill: none;
+    stroke: var(--blue);
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+
+
+/* =========================================
+   PORTFOLIO TITLE
+========================================= */
+
+.portfolio-title {
+    position: relative;
+    top: 13px;
+
+    font-family: "Pixelify Sans", sans-serif;
+
+    font-size: clamp(65px, 7vw, 110px);
+
+    font-weight: 700;
+
+    letter-spacing: 8px;
+
+    color: var(--blue);
+
+    /* red outline */
+    -webkit-text-stroke: 3px var(--red);
+
+    text-shadow:
+        3px 3px 0 var(--red);
+
+    line-height: 1;
+
+    margin-bottom: 35px;
+
+    transform: rotate(-1deg);
+}
+
+
+/* =========================================
+   NAME
+========================================= */
+
+.name-wrapper {
+    position: relative;
+    top: 39px;
+
+    display: inline-block;
+
+    margin-bottom: 12px;
+}
+
+.name {
+    font-family: "Kalam", cursive;
+
+    font-size: clamp(44px, 4.5vw, 70px);
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    color: var(--red);
+
+}
+
+
+/* petik-3 */
+
+.petik {
+    position: absolute;
+
+    width: 45px;
+
+    right: -43px;
+    top: -10px;
+
+    transform: rotate(2deg);
+}
+
+
+/* =========================================
+   PROFESSION
+========================================= */
+
+.profession {
+    position: relative;
+    top: 40px;  
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: clamp(21px, 2vw, 32px);
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: var(--red);
+
+    margin-bottom: 45px;
+
+    /* Sengaja dikasih delay biar munculnya nyusul setelah judul
+       "PORTFOLIO" selesai ngetik, jadi ga langsung nongol bareng
+       elemen lain pas halaman pertama kali dibuka */
+    opacity: 0;
+
+    animation: professionBlink 4s ease-in-out infinite;
+    animation-delay: 1.4s;
+}
+
+@keyframes professionBlink {
+    0%   { opacity: 1; }
+    45%  { opacity: 1; }
+    55%  { opacity: 0; }
+    90%  { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.hero-buttons {
+    position: relative;
+    top: 80px; 
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 65px;
+
+    width: 100%;
+
+    margin-bottom: 85px;
+}
+
+
+.button-wrapper {
+    position: relative;
+
+}
+
+
+/* Main button */
+
+.hero-button {
+    display: inline-flex;
+    
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 215px;
+    height: 60px;
+
+    padding: 0 24px;
+
+    border: 4px solid var(--blue);
+
+    border-radius: 17px;
+
+    background: transparent;
+
+    color: var(--red);
+
+    text-decoration: none;
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.hero-button:hover {
+    transform: translateY(-5px);
+
+    background: var(--blue);
+
+    color: var(--cream);
+}
+
+
+/* =========================================
+   CAT DECORATION (merah di My Project, putih di Get In Touch)
+========================================= */
+
+.cat-decor {
+    position: absolute;
+
+    object-fit: contain;
+
+    pointer-events: none;
+
+    z-index: 5;
+}
+
+
+.project-cat {
+    width: 70px;
+
+    left: -26px;
+    top: -49px;
+
+    transform: rotate(-10deg);
+}
+
+
+.contact-cat {
+    width: 80px;
+
+    left: 50%;
+    top: -57px;
+
+    /* rotate(8deg) dihapus supaya kucingnya lurus, tidak miring */
+    transform: translateX(-50%);
+
+    /* Ditaruh di belakang tombol (bukan di depan) - angka ini lebih
+       kecil dari z-index .contact-button di bawah */
+    z-index: 1;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.hero-description {
+    font-family: "Kalam", cursive;
+
+    font-size: clamp(25px, 2.3vw, 36px);
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    top: -10px;
+
+    color: var(--red);
+
+    /* Sebelumnya pakai "transform: translateY(140px)" untuk jarak ke
+       tombol di atasnya. Transform tidak menambah tinggi elemen induk,
+       jadi di layar sempit (mobile) tinggi section jadi salah hitung
+       dan marquee di bawah numpuk ke tombol Get In Touch. Diganti ke
+       margin biasa (jarak visualnya sama persis) supaya tinggi halaman
+       selalu terhitung benar di semua ukuran layar. */
+    margin-top: 140px;
+    margin-bottom: 80px;
+}
+
+
+/* =========================================
+   CONTACT BUTTON
+========================================= */
+
+.contact-wrapper {
+    position: relative;
+    display: inline-block;
+    overflow: visible;
+
+    width: max-content;
+    height: 60px;
+
+    /* transform: translateY(140px) dihapus - jarak ke elemen di atasnya
+       (.hero-description) sudah cukup lewat margin-bottom milik
+       .hero-description, jadi posisi visualnya tetap sama seperti
+       sebelumnya tanpa bikin tinggi .hero salah hitung. */
+}
+
+.contact-button {
+    position: relative;
+
+    /* Supaya tombol tampil di depan, menutupi bagian bawah kucing
+       yang "mengintip" dari belakang */
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 255px;
+    height: 60px;
+
+    padding: 0 24px;
+
+    border: 4px solid #036D9A;
+    border-radius: 17px;
+
+    background: #FFF8E7;
+
+    color: #BB240A;
+
+    text-decoration: none;
+
+    font-family: "Nunito", sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    box-sizing: border-box;
+
+    overflow: visible;
+}
+
+
+
+/* =========================================
+   BOTTOM MARQUEE
+========================================= */
+
+.bottom-marquee {
+    /* Sebelumnya "position: absolute; bottom: -550px" dihitung manual
+       berdasarkan tinggi halaman versi desktop, jadi begitu tinggi
+       konten berubah (mis. di layar mobile) marquee ini ikut geser
+       naik dan malah menimpa/memotong tombol "Get In Touch".
+       Diganti ke alur dokumen normal (relative) supaya otomatis
+       selalu menempel di paling bawah halaman, di semua ukuran layar. */
+    position: relative;
+
+    width: 100%;
+
+    height: 54px;
+
+    background: var(--red);
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    z-index: 20;
+}
+
+
+.marquee-track {
+    display: flex;
+
+    width: max-content;
+
+    animation: marquee 18s linear infinite;
+}
+
+
+.marquee-content {
+    white-space: nowrap;
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 22px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    color: var(--cream);
+
+    padding-right: 20px;
+}
+
+
+@keyframes marquee {
+
+    from {
+        transform: translateX(0);
+    }
+
+    /* Digeser sampai -50% (bukan -30%), karena sekarang isinya
+       ada 2 salinan identik (.marquee-content x2) berdampingan
+       dalam .marquee-track. Dengan begitu, saat animasi mencapai
+       -50% posisinya persis sama dengan awal, jadi looping-nya
+       mulus terus-menerus tanpa lompatan/patah. */
+    to {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* =========================================
+   ABOUT ME SECTION
+========================================= */
+
+.about {
+    position: relative;
+
+    width: 100%;
+
+    background: var(--cream);
+
+    padding: 90px 7% 120px;
+}
+
+
+/* Two-column content */
+
+.about-content {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 70px;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+
+/* Note / bio */
+
+.about-note {
+    position: relative;
+
+    width: min(579px, 44vw);
+
+    flex-shrink: 0;
+
+    transform: rotate(-1,5deg);
+}
+
+.note-bg {
+    display: block;
+    width: 107%;
+    height: auto;
+}
+
+.note-text {
+    position: absolute;
+
+    left: 24%;
+    right: 14%;
+    top: 11%;
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 22px;
+    line-height: 1.7;
+
+    font-weight: 700;
+
+    color: var(--red);
+
+    text-align: left;
+
+}
+
+
+/* Profile (kanan) */
+
+.about-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 100px;
+
+    padding-top: 60px;
+}
+
+/* Bungkus "Hi I'm," + nama biar miring senada sama kartu kertas */
+.about-heading-text {
+    position: relative;
+    left: 40px;
+
+    transform: rotate(-1,5deg);
+}
+
+.about-greet {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    margin-bottom: 6px;
+}
+
+.about-greet-text {
+    font-family: "Kalam", cursive;
+
+    font-size: clamp(38px, 2.4vw, 48px);
+
+    font-weight: 700;
+
+    color: var(--red);
+}
+
+.about-emot {
+    width: 84px;
+    height: auto;
+}
+
+.about-name {
+    font-family: "Kalam", cursive;
+
+    font-size: clamp(32px, 3.6vw, 48px);
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: var(--red);
+
+    margin-bottom: 34px;
+}
+
+.about-photo-wrapper {
+    position: relative;
+    left: 60px;   /* ini yang geser ke kanan, angka bebas kamu ubah */
+
+    width: min(340px, 32vw);
+    padding-top: 100px;
+}
+
+.about-polaroid {
+    position: relative;
+
+    width: 100%;
+}
+
+.about-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.about-fox {
+    position: absolute;
+
+    width: 42%;
+
+    left: -22%;
+    top: 5%;
+
+    z-index: 3;
+
+    transform: rotate(-4deg);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .hero {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .photo-frame {
+        transform: scale(0.85);
+        transform-origin: left center;
+
+        margin-right: -40px;
+    }
+
+    .hero-content {
+        margin-left: 3%;
+        width: 68vw;
+    }
+
+    .portfolio-title {
+        font-size: 75px;
+    }
+
+    .greeting {
+        font-size: 45px;
+    }
+
+    .hero-buttons {
+        gap: 30px;
+    }
+
+
+    .about-note {
+        width: min(430px, 55vw);
+    }
+
+    .about-photo-wrapper {
+        left: 0;
+
+        width: min(320px, 38vw);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: auto;
+
+        padding:
+            45px
+            20px
+            100px;
+
+        display: flex;
+        flex-direction: column;
+
+        overflow: hidden;
+    }
+
+
+    /* Frame moved above content */
+
+    .photo-frame {
+        order: 1;
+
+        /* PENTING: width & height TIDAK diubah di sini (dibiarkan
+           tetap 285x870 seperti aslinya/desktop). Sebelumnya di sini
+           dipaksa jadi 240x755, padahal posisi foto-foto di dalamnya
+           (.photo, .photo-one/two/three) dihitung berdasarkan ukuran
+           asli 285x870 - jadi begitu kotaknya dipaksa mengecil jadi
+           240x755, isinya (foto & karakter) ikut "geser" dan nggak
+           lagi sejajar dengan gambar frame-nya. Sekarang mengecilnya
+           cukup lewat transform:scale() di bawah, yang otomatis ikut
+           menyusutkan SEMUA isi di dalam frame secara proporsional
+           (termasuk posisi foto), jadi tetap "terkunci" pas. */
+
+        margin: 0 auto -278px;
+
+        transform: scale(0.68);
+
+        transform-origin: top center;
+    }
+
+
+    .hero-content {
+        order: 2;
+
+        width: 100%;
+
+        margin: 0;
+    }
+
+
+    .greeting-wrapper {
+        margin-bottom: 35px;
+    }
+
+
+    .greeting {
+        font-size: 36px;
+
+        text-align: center;
+
+        padding-right: 2px;
+
+        letter-spacing: 3px;
+
+        transform: rotate(0deg);
+    }
+
+
+    .greeting-line {
+        width: 75%;
+
+        right: 12%;
+        top: 3px;
+
+        bottom: -20px;
+
+        transform: rotate(-10deg);
+
+    }
+
+
+    .portfolio-title {
+        font-size: clamp(50px, 15vw, 80px);
+
+        letter-spacing: 4px;
+
+        -webkit-text-stroke: 2px var(--red);
+
+        text-shadow:
+            2px 2px 0 var(--red);
+
+        margin-bottom: 25px;
+        top: 20px;
+    }
+
+
+    .name {
+        font-size: 45px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .petik {
+        width: 32px;
+
+        right: -38px;
+        top: -12px;
+    }
+
+
+    .profession {
+        font-size: 20px;
+
+        line-height: 1.5;
+
+        max-width: 90%;
+
+        margin-bottom: 35px;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        gap: 35px;
+
+        margin-bottom: 60px;
+    }
+
+
+    .hero-button {
+        min-width: 210px;
+
+        height: 56px;
+
+        font-size: 21px;
+    }
+
+
+    .hero-description {
+        font-size: 25px;
+
+        line-height: 1.4;
+
+        max-width: 90%;
+
+        margin-bottom: 70px;
+    }
+
+
+    .bottom-marquee {
+        height: 45px;
+    }
+
+
+    .marquee-content {
+        font-size: 16px;
+    }
+
+
+    .star {
+        font-size: 35px;
+    }
+
+
+    .about {
+        padding: 70px 6% 90px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+
+        gap: 90px;
+    }
+
+    .about-note {
+        width: min(430px, 88vw);
+
+        transform: rotate(0deg);
+    }
+
+    .note-text {
+        font-size: 13.9px;
+    }
+
+    .about-profile {
+        align-items: center;
+
+        text-align: center;
+
+        /* Reset margin-left:100px dari style desktop - di mobile
+           .about-content sudah flex-column & align-items:center,
+           jadi margin sebesar itu bikin kartu ini kegeser jauh ke
+           kanan sampai kepotong layar (overflow horizontal). */
+        margin-left: 0;
+
+        padding-top: 0;
+    }
+
+    .about-fox {
+        width: 50%;
+
+        left: -25%;
+        top: 10%;
+    }
+
+    .about-greet {
+        justify-content: center;
+    }
+
+    .about-heading-text {
+        transform: rotate(0deg);
+
+        /* Reset left:40px dari style desktop, penyebab sama seperti
+           di atas: bikin teks "Hi I'm, Sifa Andriyani" kegeser ke
+           kanan dan terpotong di layar mobile. */
+        left: 0;
+    }
+
+    .about-photo-wrapper {
+        left: 0;
+
+        width: min(320px, 65vw);
+
+        margin: 0 auto;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .hero {
+        padding-top: 30px;
+    }
+
+
+    .photo-frame {
+        /* Sama seperti breakpoint di atas: width/height TIDAK diubah,
+           cukup transform:scale() supaya posisi foto tetap "terkunci"
+           sejajar dengan gambar frame-nya di layar HP kecil.
+           margin-bottom dihitung ulang menyesuaikan scale 0.55
+           (870px * (1 - 0.55) = 391.5px ruang kosong yang perlu
+           "ditarik" biar konten di bawahnya tidak ada jarak kosong). */
+        transform: scale(0.55);
+
+        margin-bottom: -391px;
+    }
+
+
+    .hero-content {
+        margin-top: 0;
+    }
+
+
+    .greeting {
+        font-size: 30px;
+    }
+
+
+    .portfolio-title {
+        font-size: 48px;
+    }
+
+
+    .name {
+        font-size: 38px;
+    }
+
+
+    .profession {
+        font-size: 18px;
+    }
+
+
+    .hero-description {
+        font-size: 22px;
+    }
+
+
+    .project-cat {
+        width: 60px;
+
+        left: -22px;
+    }
+
+}
+
+
+/* =========================================
+   DEKORASI - ANIMASI
+========================================= */
+
+/* Judul "PORTFOLIO" - animasi ketik per huruf (murni CSS, tiap
+   huruf sudah ditulis sebagai <span class="letter"> di HTML) */
+
+.portfolio-title .letter {
+    display: inline-block;
+
+    opacity: 0;
+
+    transform: translateY(14px);
+
+    /* Diganti dari "forwards" (main sekali lalu berhenti) jadi
+       "infinite" supaya animasi ketik huruf per huruf ini berulang
+       terus-menerus. Durasi dinaikkan jadi 5s (dari 0.45s) supaya ada
+       jeda "diam" saat kata sudah lengkap terlihat, sebelum huruf
+       menghilang lagi dan mengetik ulang dari awal. */
+    animation: letterTypeIn 5s ease infinite;
+}
+
+.portfolio-title .letter:nth-child(1)  { animation-delay: 0.00s; }
+.portfolio-title .letter:nth-child(2)  { animation-delay: 0.12s; }
+.portfolio-title .letter:nth-child(3)  { animation-delay: 0.24s; }
+.portfolio-title .letter:nth-child(4)  { animation-delay: 0.36s; }
+.portfolio-title .letter:nth-child(5)  { animation-delay: 0.48s; }
+.portfolio-title .letter:nth-child(6)  { animation-delay: 0.60s; }
+.portfolio-title .letter:nth-child(7)  { animation-delay: 0.72s; }
+.portfolio-title .letter:nth-child(8)  { animation-delay: 0.84s; }
+.portfolio-title .letter:nth-child(9)  { animation-delay: 0.96s; }
+
+@keyframes letterTypeIn {
+
+    /* 0% - 9%: huruf muncul (ketik masuk), sama seperti animasi lama */
+    0% {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    9% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* 9% - 80%: huruf diam terlihat penuh (jeda) */
+    80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* 80% - 92%: huruf menghilang lagi */
+    92% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    /* 92% - 100%: diam kosong sebentar sebelum loop berikutnya mulai */
+    100% {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+}
+
+
+/* Garis coretan di bawah "Nice To Meet You" - animasi murni CSS.
+   path punya atribut pathLength="1000" di HTML, jadi stroke-dasharray
+   di sini selalu 0-1000 berapa pun ukuran/skala layar. */
+
+.greeting-line path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+
+    animation: drawLine 1.8s ease-in-out 0.3s forwards;
+}
+
+@keyframes drawLine {
+
+    to {
+        stroke-dashoffset: 0;
+    }
+
+}
+
+
+/* Sandwich: wiggle + floating jadi satu gerakan */
+
+.sandwich {
+    animation: sandwichWiggleFloat 3.2s ease-in-out infinite;
+    transform-origin: center center;
+}
+
+@keyframes sandwichWiggleFloat {
+
+    0%, 100% {
+        transform: rotate(25deg) translateY(0);
+    }
+
+    25% {
+        transform: rotate(14deg) translateY(-5px);
+    }
+
+    50% {
+        transform: rotate(25deg) translateY(-9px);
+    }
+
+    75% {
+        transform: rotate(36deg) translateY(-5px);
+    }
+
+}
+
+
+/* Note musik: floating pelan naik-turun */
+
+.music-note {
+    animation: noteFloat 3s ease-in-out infinite;
+}
+
+@keyframes noteFloat {
+
+    0%, 100% {
+        transform: rotate(26deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(26deg) translateY(-10px);
+    }
+
+}
+
+
+/* Lukisan: tilt (miring bolak-balik) */
+
+.painting {
+    animation: paintingTilt 4s ease-in-out infinite;
+    transform-origin: top center;
+}
+
+@keyframes paintingTilt {
+
+    0%, 100% {
+        transform: rotate(-17deg);
+    }
+
+    50% {
+        transform: rotate(-7deg);
+    }
+
+}
+
+
+/* Kucing merah (tombol My Project): bounce (dilambatin) */
+
+.project-cat {
+    animation: catBounce 3.2s ease-in-out infinite;
+}
+
+@keyframes catBounce {
+
+    0%, 100% {
+        transform: rotate(-8deg) translateY(0);
+    }
+
+    20% {
+        transform: rotate(-8deg) translateY(-16px);
+    }
+
+    40% {
+        transform: rotate(-8deg) translateY(0);
+    }
+
+    55% {
+        transform: rotate(-8deg) translateY(-8px);
+    }
+
+    70% {
+        transform: rotate(-8deg) translateY(0);
+    }
+
+    85% {
+        transform: rotate(-8deg) translateY(-3px);
+    }
+
+}
+
+
+/* Kucing putih (tombol Get In Touch): dari kecil ke besar */
+
+.contact-cat {
+    animation: catGrow 6.0s ease-in-out infinite;
+}
+
+@keyframes catGrow {
+
+    0%, 100% {
+        transform: translateX(-50%) scale(0.7);
+    }
+
+    50% {
+        transform: translateX(-50%) scale(1.0);
+    }
+
+}
+
+
+/* Scroll reveal: elemen muncul (fade + geser) begitu discroll masuk
+   layar, dipicu lewat class "show" yang ditambahkan IntersectionObserver
+   di js/script.js */
+
+.reveal,
+.reveal-left {
+    opacity: 0;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal {
+    transform: translateY(50px);
+}
+
+.reveal-left {
+    transform: translateX(-70px);
+}
+
+.reveal.show,
+.reveal-left.show {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+
+/* Rubah gigit (di foto About Me): gigit-gigit + goyang pelan */
+
+.about-fox {
+    animation: foxBite 2.6s ease-in-out infinite;
+    transform-origin: bottom right;
+}
+
+@keyframes foxBite {
+
+    0%, 100% {
+        transform: rotate(-4deg) translateY(0);
+    }
+
+    25% {
+        transform: rotate(-9deg) translateY(-4px);
+    }
+
+    50% {
+        transform: rotate(-4deg) translateY(0);
+    }
+
+    75% {
+        transform: rotate(1deg) translateY(-2px);
+    }
+
+}
+
+
+/* =========================================
+   TYPING CURSOR (dipakai JS untuk animasi
+   ketik "Hi I'm, Sifa Andriyani" & note bio)
+========================================= */
+
+.typing-cursor::after {
+    content: "|";
+
+    display: inline-block;
+
+    margin-left: 2px;
+
+    color: var(--red);
+
+    animation: caretBlink 0.8s steps(1) infinite;
+}
+
+@keyframes caretBlink {
+
+    0%, 50% {
+        opacity: 1;
+    }
+
+    50.01%, 100% {
+        opacity: 0;
+    }
+
+}
+
+
+/* Petik-3 (tanda kutip di sebelah nama): animasi geser kanan-kiri */
+
+.petik {
+    animation: petikSway 2.4s ease-in-out infinite;
+}
+
+@keyframes petikSway {
+
+    0%, 100% {
+        transform: rotate(8deg) translateX(-6px);
+    }
+
+    50% {
+        transform: rotate(8deg) translateX(6px);
+    }
+
+}
+
+
+/* =========================================
+   SKILLS & TOOLS SECTION
+   (icon-icon-nya murni dari kode/Font Awesome,
+   bukan gambar - cuma navbar.jpg & bebek.png
+   yang dipakai buat badge judul)
+========================================= */
+
+.skills-tools {
+    position: relative;
+
+    width: 100%;
+
+    background: var(--cream);
+
+    padding: 60px 7% 120px;
+
+    overflow: hidden;
+}
+
+
+/* ---- Badge judul "Skills & Tools" ---- */
+
+.skills-tools-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 70px;
+}
+
+/* Keterangan singkat bahasa Inggris di bawah badge judul
+   (bukan keterangan per-icon, cuma satu kalimat buat section-nya) */
+
+.skills-tools-subtitle {
+    max-width: 560px;
+
+    margin-top: 22px;
+
+    text-align: center;
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: clamp(15px, 1.6vw, 18px);
+
+    font-weight: 600;
+
+    line-height: 1.6;
+
+    color: var(--red);
+
+    opacity: 0.85;
+}
+
+.skills-badge {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    /* Dirapetin biar box ga kepanjangan / banyak ruang kosong
+       kayak di referensi (badge kecil & pas sama teks) */
+    width: min(340px, 90vw);
+}
+
+.skills-duck {
+    position: relative; 
+    left: 14px;
+
+    width: 36%;
+
+    /* Bebek nempel/numpuk ke badge (bukan cuma nongol dikit),
+       badan bebek nutupin sebagian sisi kiri kotak */
+    margin-right: -24%;
+
+    z-index: 1;
+
+    transform: rotate(-3deg);
+}
+
+.skills-badge-box {
+    position: relative;
+
+    flex: 1;
+
+    padding-left: 26%;
+
+    /* Ditaruh di depan si bebek */
+    z-index: 2;
+}
+
+.skills-badge-bg {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    position: relative;
+    top: 30px;  
+    left: -27px;
+}
+
+.skills-badge-text {
+    position: absolute;
+
+    left: 22%;
+    right: 10%;
+    top: 92%;
+
+    transform: translateY(-56%) rotate(-1deg);
+
+    text-align: center;
+
+    font-family: "Kalam", cursive;
+
+    font-size: clamp(18px, 2.2vw, 26px);
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    color: var(--blue);
+}
+
+
+/* ---- Label kecil "★ Skills" / "★ Tools" ---- */
+
+.icon-group {
+    margin-bottom: 55px;
+}
+
+.icon-group:last-child {
+    margin-bottom: 0;
+}
+
+.group-label {
+    text-align: center;
+
+    font-family: "Kalam", cursive;
+
+    font-size: clamp(24px, 2.4vw, 32px);
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: var(--red);
+
+    margin-bottom: 26px;
+}
+
+
+/* ---- Track marquee (baris icon yang geser terus) ---- */
+
+.icon-marquee {
+    width: 100%;
+
+    overflow: hidden;
+
+    /* Ujung kiri-kanan memudar biar transisinya halus,
+       ga keliatan "kepotong" tiba-tiba */
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        #000 8%,
+        #000 92%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        #000 8%,
+        #000 92%,
+        transparent 100%
+    );
+}
+
+.icon-marquee-track {
+    display: flex;
+    align-items: flex-start;
+
+    width: max-content;
+}
+
+/* Baris Skills geser ke kiri, baris Tools ke kanan -
+   biar ada variasi arah, ga monoton satu arah semua */
+
+.track-left {
+    animation: iconMarqueeLeft 26s linear infinite;
+}
+
+.track-right {
+    animation: iconMarqueeRight 26s linear infinite;
+}
+
+/* Marquee berhenti sebentar pas di-hover, biar nama
+   skill/tool-nya sempat kebaca */
+
+.icon-marquee:hover .icon-marquee-track {
+    animation-play-state: paused;
+}
+
+@keyframes iconMarqueeLeft {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
+
+@keyframes iconMarqueeRight {
+
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+
+}
+
+
+.icon-marquee-content {
+    display: flex;
+
+    flex-shrink: 0;
+
+    gap: 46px;
+
+    padding: 0 23px;
+}
+
+
+/* ---- Satu item icon (lingkaran + nama) ---- */
+
+.icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 108px;
+}
+
+.icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 74px;
+    height: 74px;
+
+    border-radius: 50%;
+
+    border: 3px solid var(--cream);
+
+    box-shadow: 0 3px 0 rgba(187, 36, 10, 0.25);
+
+    font-size: 30px;
+
+    color: var(--cream);
+
+    margin-bottom: 12px;
+
+    /* Ini animasi "muter"-nya - tiap icon puter pelan-pelan terus */
+    animation: iconSpin 7s linear infinite;
+}
+
+.icon-name {
+    font-family: "Nunito", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    color: var(--red);
+}
+
+/* Warna lingkaran gantian biru/merah, sesuai palet warna web ini */
+
+.icon-item:nth-child(odd) .icon-circle {
+    background: var(--blue);
+}
+
+.icon-item:nth-child(even) .icon-circle {
+    background: var(--red);
+}
+
+/* Separuh icon puter ke kanan, separuhnya lagi ke kiri,
+   biar ga kaku semua muter searah yang sama */
+
+.icon-item:nth-child(even) .icon-circle {
+    animation-direction: reverse;
+    animation-duration: 9s;
+}
+
+@keyframes iconSpin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ---- Responsive ---- */
+
+@media (max-width: 768px) {
+
+    .skills-tools {
+        padding: 45px 5% 90px;
+    }
+
+    .skills-tools-heading {
+        margin-bottom: 50px;
+    }
+
+    .skills-duck {
+        width: 46%;
+        margin-right: -26%;
+    }
+
+    .icon-group {
+        margin-bottom: 40px;
+    }
+
+    .icon-marquee-content {
+        gap: 30px;
+        padding: 0 15px;
+    }
+
+    .icon-item {
+        width: 86px;
+    }
+
+    .icon-circle {
+        width: 60px;
+        height: 60px;
+
+        font-size: 24px;
+    }
+
+    .icon-name {
+        font-size: 12.5px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .skills-badge-text {
+        font-size: 18px;
+    }
+
+    .track-left,
+    .track-right {
+        animation-duration: 20s;
+    }
+
+}
+
+
+/* =========================================
+   EXPERIENCE SECTION
+   (garis timeline yang "tergambar" sendiri
+   pas discroll)
+
+   Caranya: ada garis vertikal pudar di sisi
+   kiri daftar kartu (.timeline-line), dan di
+   atasnya ada garis solid (.timeline-line-fill)
+   yang tinggi-nya (height, dalam %) diatur oleh
+   JS tiap discroll (js/script.js) - makin jauh
+   section ini kelewatan, makin "digambar"
+   panjang garis birunya. Titik bulat di tiap
+   kartu (.exp-dot) juga ikut "menyala" begitu
+   garis fill-nya udah lewatin posisi kartu itu.
+========================================= */
+
+.experience {
+    position: relative;
+
+    width: 100%;
+
+    background: var(--cream);
+
+    padding: 60px 7% 140px;
+}
+
+
+/* ---- Badge judul "Experience" ---- */
+
+.experience-heading {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 70px;
+}
+
+.experience-badge {
+    position: relative;
+
+    width: min(220px, 80vw);
+}
+
+.experience-badge-bg {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+.experience-badge-text {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: rotate(-1deg);
+
+    font-family: "Kalam", cursive;
+
+    font-size: clamp(22px, 2.6vw, 30px);
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    color: var(--blue);
+}
+
+
+/* ---- Timeline ---- */
+
+.experience-timeline {
+    position: relative;
+
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    /* Ruang buat garis + titik di sisi kiri */
+    padding-left: 46px;
+}
+
+.timeline-line {
+    position: absolute;
+
+    left: 9px;
+    top: 6px;
+    bottom: 6px;
+
+    width: 4px;
+
+    border-radius: 4px;
+
+    background: rgba(3, 109, 154, 0.18);
+}
+
+.timeline-line-fill {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 0%;
+
+    border-radius: 4px;
+
+    background: var(--blue);
+}
+
+.experience-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 46px;
+}
+
+.exp-card {
+    position: relative;
+
+    background: var(--cream);
+
+    border: 3px dashed var(--blue);
+    border-radius: 32px;
+
+    padding: 28px 30px;
+
+    box-shadow: 0 14px 28px rgba(3, 109, 154, 0.18);
+}
+
+/* Titik penanda di garis timeline, sejajar sama tiap kartu */
+.exp-dot {
+    position: absolute;
+
+    left: -44px;
+    top: 30px;
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: var(--cream);
+
+    border: 4px solid rgba(3, 109, 154, 0.35);
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Ditambahin JS begitu garis fill timeline udah "sampai"
+   ke posisi kartu ini - titiknya jadi penuh warna biru */
+.exp-dot.reached {
+    background: var(--blue);
+
+    border-color: var(--blue);
+
+    transform: scale(1.15);
+}
+
+.exp-date {
+    display: inline-block;
+
+    margin-bottom: 14px;
+
+    font-family: "Kalam", cursive;
+
+    font-size: clamp(17px, 1.8vw, 20px);
+
+    font-weight: 700;
+
+    color: var(--blue);
+}
+
+.exp-body {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 26px;
+}
+
+.exp-photo {
+    flex-shrink: 0;
+
+    width: 190px;
+    height: 130px;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            rgba(3, 109, 154, 0.08),
+            rgba(3, 109, 154, 0.08) 10px,
+            rgba(3, 109, 154, 0.14) 10px,
+            rgba(3, 109, 154, 0.14) 20px
+        );
+
+    border: 2px dashed rgba(3, 109, 154, 0.4);
+}
+
+.exp-photo img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.exp-text h3 {
+    margin-bottom: 10px;
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: clamp(16px, 1.9vw, 19px);
+
+    font-weight: 800;
+
+    line-height: 1.3;
+
+    color: var(--red);
+}
+
+.exp-text p {
+    font-family: "Nunito", sans-serif;
+
+    font-size: clamp(13.5px, 1.5vw, 15px);
+
+    font-weight: 600;
+
+    line-height: 1.55;
+
+    color: var(--red);
+
+    opacity: 0.9;
+}
+
+
+/* ---- Responsive ---- */
+
+@media (max-width: 640px) {
+
+    .experience {
+        padding: 45px 6% 100px;
+    }
+
+    .experience-timeline {
+        padding-left: 34px;
+    }
+
+    .timeline-line {
+        left: 5px;
+    }
+
+    .exp-dot {
+        left: -32px;
+
+        width: 14px;
+        height: 14px;
+    }
+
+    .experience-list {
+        gap: 30px;
+    }
+
+    .exp-body {
+        flex-direction: column;
+    }
+
+    .exp-photo {
+        width: 100%;
+        height: 160px;
+    }
+
+}
+
+
+/* =========================================
+   PROJECT SECTION
+   (kartu bertumpuk / stacked cards - persis
+   pola yang sebelumnya dipakai di Experience:
+   tiap .project-card sticky di "top" yang
+   makin gede per kartu lewat custom property
+   --i, jadi pas discroll kartu project baru
+   numpuk nutupin kartu sebelumnya satu-satu)
+========================================= */
+
+.project {
+    position: relative;
+
+    width: 100%;
+
+    background: var(--cream);
+
+    padding: 60px 7% 140px;
+}
+
+
+/* ---- Badge judul "Project" (kucing nongol dari kiri,
+   sama polanya kayak bebek di badge Skills & Tools) ---- */
+
+.project-heading {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 70px;
+}
+
+.project-badge {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: min(230px, 88vw);
+}
+
+.project-badge-box {
+    position: relative;
+
+    flex: 1;
+
+    z-index: 2;
+}
+
+.project-badge-bg {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+.project-badge-text {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: rotate(-1deg);
+
+    font-family: "Kalam", cursive;
+
+    font-size: clamp(22px, 2.6vw, 30px);
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    color: var(--blue);
+}
+
+
+/* ---- Tumpukan kartu project ---- */
+
+.project-stack {
+    position: relative;
+
+    max-width: 780px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    /* Jarak antar kartu pas kondisi normal (belum numpuk),
+       sekaligus jadi "ruang scroll" biar tiap kartu sempat
+       nongol sendirian dulu sebelum ketutup kartu berikutnya */
+    gap: 140px;
+    transform: translateY(-30px);
+}
+
+.project-card {
+    position: sticky;
+
+    /* Tiap kartu nempel makin ke bawah dikit dari kartu
+       sebelumnya, makanya pas ketumpuk masih nyisain
+       "kepala" kartu di atasnya. Offsetnya dibatasi (di-cap)
+       maksimal 3 kartu ke belakang - kalau enggak, makin
+       banyak project, "kepala" kartu lama numpuk terus
+       nambah dan bikin space di atas makin sempit &
+       kartu paling bawah jadi tenggelem/susah keliatan. */
+    top: calc(100px + (min(var(--i), 3) * 26px));
+
+    z-index: calc(var(--i) + 1);
+
+    background: #FFFFFF;
+
+    border-radius: 36px;
+
+    padding: 22px;
+
+    box-shadow: 0 16px 30px rgba(3, 109, 154, 0.18);
+
+    transform: scale(1);
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+/* Fade-in khusus project (cuma main opacity, BUKAN transform,
+   biar ga bentrok sama transform: scale() punya efek numpuk
+   kartu di atas / .is-behind) */
+.project-reveal {
+    opacity: 0;
+
+    transition: opacity 0.8s ease;
+}
+
+.project-reveal.show {
+    opacity: 1;
+}
+
+/* Ditambahin JS (js/script.js) ke kartu yang udah "ketutup"
+   kartu berikutnya pas discroll - dibikin sedikit mengecil
+   biar keliatan mundur ke belakang tumpukan */
+.project-card.is-behind {
+    transform: scale(0.96);
+
+    box-shadow: 0 8px 16px rgba(3, 109, 154, 0.12);
+}
+
+.project-card-inner {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 32px;
+
+    background: #FFFFFF;
+
+    border-radius: 26px;
+
+    padding: 30px;
+}
+
+.project-media {
+    width: 300px;
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+.project-date {
+    font-family: "Kalam", cursive;
+
+    font-size: clamp(16px, 1.8vw, 19px);
+
+    font-weight: 700;
+
+    color: var(--blue);
+}
+
+.project-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 11;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            rgba(3, 109, 154, 0.08),
+            rgba(3, 109, 154, 0.08) 10px,
+            rgba(3, 109, 154, 0.14) 10px,
+            rgba(3, 109, 154, 0.14) 20px
+        );
+
+    border: 2px dashed rgba(3, 109, 154, 0.4);
+}
+
+.project-thumb img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.project-view-btn {
+    align-self: flex-start;
+
+    background: #141414;
+
+    color: #FFFFFF;
+
+    padding: 11px 30px;
+
+    border-radius: 999px;
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 14.5px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.project-view-btn:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.88;
+}
+
+.project-info {
+    flex: 1;
+
+    min-width: 220px;
+}
+
+.project-info h3 {
+    margin-bottom: 12px;
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: clamp(18px, 2.1vw, 21px);
+
+    font-weight: 800;
+
+    line-height: 1.3;
+
+    color: var(--red);
+}
+
+.project-info p {
+    margin-bottom: 18px;
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: clamp(13.5px, 1.5vw, 15px);
+
+    font-weight: 600;
+
+    line-height: 1.6;
+
+    color: var(--red);
+
+    opacity: 0.9;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.project-tags span {
+    display: inline-block;
+
+    border: 2px solid var(--blue);
+    border-radius: 999px;
+
+    padding: 6px 16px;
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 12.5px;
+
+    font-weight: 700;
+
+    color: var(--red);
+}
+
+
+/* ---- Responsive ---- */
+
+@media (max-width: 700px) {
+
+    .project {
+        padding: 45px 6% 100px;
+    }
+
+    .project-stack {
+        gap: 90px;
+    }
+
+    /* Awalnya sticky-numpuk ini dimatiin di layar kecil (dibikin
+       position:static, kartu tampil berurutan biasa) karena
+       dikira bakal susah dibaca/bikin layout keteken. Ternyata
+       animasinya malah dipengen sama kaya di tampilan website -
+       jadi sticky-nya dipertahanin, cuma offset top & step-nya
+       dikecilin biar proporsional sama layar mobile yang
+       kartunya jadi lebih tinggi (foto di atas, teks di bawah). */
+    .project-card {
+        top: calc(70px + (min(var(--i), 3) * 18px));
+
+        /* Padding kartu dikecilin di mobile - lumayan ngirit tinggi */
+        padding: 14px;
+    }
+
+    .project-card-inner {
+        flex-direction: column;
+
+        gap: 18px;
+
+        padding: 18px;
+    }
+
+    .project-media {
+        width: 100%;
+
+        gap: 10px;
+    }
+
+    .project-thumb {
+        aspect-ratio: 16 / 9;
+    }
+
+    .project-view-btn {
+        padding: 9px 24px;
+
+        font-size: 13px;
+    }
+
+    .project-info h3 {
+        margin-bottom: 8px;
+
+        font-size: 17px;
+    }
+
+    /* Deskripsi dibatasin 3 baris + "..." - biar kartu ga
+       kepanjangan sampe kebawa nabrak navbar bawah yang
+       ngambang. Teks lengkapnya tetep bisa dibaca lewat
+       tombol "View" ke project aslinya. */
+    .project-info p {
+        margin-bottom: 12px;
+
+        font-size: 13px;
+
+        line-height: 1.5;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+
+        overflow: hidden;
+    }
+
+    .project-tags span {
+        padding: 5px 12px;
+
+        font-size: 11.5px;
+    }
+
+}
+
+
+/* =========================================
+   SERTIFIKAT SECTION
+========================================= */
+
+.certificates {
+    position: relative;
+
+    width: 100%;
+
+    background: var(--cream);
+
+    padding: 60px 7% 120px;
+}
+
+
+/* ---- Badge judul "Sertifikat" ---- */
+
+.certificates-heading {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 60px;
+}
+
+.certificates-badge {
+    position: relative;
+
+    width: min(260px, 80vw);
+}
+
+.certificates-badge-bg {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+.certificates-badge-text {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: rotate(-1deg);
+
+    font-family: "Kalam", cursive;
+
+    font-size: clamp(22px, 2.8vw, 32px);
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    color: var(--blue);
+}
+
+
+
+/* ---- Daftar kartu sertifikat ---- */
+
+.certificates-list {
+    max-width: 860px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 60px;
+}
+
+/* Efek "stamp" - kartu mulai dari gede & miring kayak
+   dicap/distempel, terus "TOK" jatuh ke posisi normal
+   pas discroll masuk layar. Class "show" ditambahin JS
+   (js/script.js) lewat IntersectionObserver yang sama
+   dipakai buat .reveal / .reveal-left */
+.cert-card {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 34px;
+
+    background: var(--cream);
+
+    border: 3px dashed var(--blue);
+    border-radius: 28px;
+
+    padding: 32px 38px;
+
+    box-shadow: 0 14px 28px rgba(3, 109, 154, 0.14);
+
+    opacity: 0;
+
+    transform: scale(1.5) rotate(-14deg);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cert-card.show {
+    opacity: 1;
+
+    transform: scale(1) rotate(0deg);
+}
+
+/* Stiker pancake nongol di pojok kanan-atas tiap kartu */
+.cert-decor {
+    position: absolute;
+
+    top: -40px;
+    right: -24px;
+
+    width: 90px;
+    height: auto;
+
+    transform: rotate(12deg);
+
+    pointer-events: none;
+}
+
+.cert-photo {
+    flex-shrink: 0;
+
+    width: 190px;
+    height: 240px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            rgba(3, 109, 154, 0.08),
+            rgba(3, 109, 154, 0.08) 10px,
+            rgba(3, 109, 154, 0.14) 10px,
+            rgba(3, 109, 154, 0.14) 20px
+        );
+
+    border: 2px dashed rgba(3, 109, 154, 0.4);
+}
+
+.cert-photo img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.cert-text h3 {
+    margin-bottom: 10px;
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: clamp(19px, 2.4vw, 24px);
+
+    font-weight: 800;
+
+    color: var(--blue);
+}
+
+.cert-text p {
+    margin-bottom: 16px;
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: clamp(15px, 1.8vw, 17.5px);
+
+    font-weight: 700;
+
+    line-height: 1.5;
+
+    color: var(--red);
+}
+
+.cert-date {
+    display: inline-block;
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: clamp(14px, 1.6vw, 16px);
+
+    font-weight: 800;
+
+    color: var(--blue);
+}
+
+
+/* ---- Responsive ---- */
+
+@media (max-width: 560px) {
+
+    .certificates {
+        padding: 45px 6% 90px;
+    }
+
+    .certificates-list {
+        gap: 50px;
+    }
+
+    .cert-card {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .cert-photo {
+        width: 100%;
+        height: 230px;
+    }
+
+    .cert-decor {
+        top: -28px;
+        right: 10px;
+    }
+
+}
+
+/* =========================================
+   CONTACT SECTION
+========================================= */
+
+.contact {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    background: var(--cream);
+
+    padding: 90px 7% 0;
+}
+
+
+/* ---- Bagian atas: heading + ERROR 404 ---- */
+
+.contact-top {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 40px;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+.contact-text {
+    max-width: 560px;
+}
+
+.connect-heading {
+    font-family: "Kalam", cursive;
+
+    font-weight: 700;
+
+    font-size: clamp(34px, 5.2vw, 56px);
+
+    line-height: 1.15;
+
+    color: var(--red);
+
+    transform: rotate(-3deg);
+
+    margin-bottom: 18px;
+}
+
+/* Tiap huruf "Let's Connect!" mulai tersembunyi & agak miring,
+   nanti "ditulis" satu-satu begitu section discroll masuk layar
+   (class "show" ditambahin otomatis lewat IntersectionObserver
+   yang sama dipakai .reveal - lihat js/script.js) */
+.connect-heading .letter {
+    display: inline-block;
+
+    opacity: 0;
+
+    transform: translateY(18px) rotate(6deg);
+}
+
+.contact-text.show .connect-heading .letter {
+    /* PENTING: pakai longhand (animation-name/duration/dst), BUKAN
+       shorthand "animation: ... ;". Kalau pakai shorthand, itu
+       otomatis nge-reset "animation-delay" tiap huruf balik ke 0s
+       (karena shorthand nyetel SEMUA sub-properti sekaligus) - nah
+       aturan selector di sini (.contact-text.show ...) lebih
+       spesifik dari aturan delay per-huruf di bawah (nth-child),
+       jadi delay yang harusnya beda-beda kepakai kesundul balik ke
+       0 semua, akibatnya semua huruf nongol bareng, bukan satu-satu.
+       Dengan longhand begini, "animation-delay" nggak disentuh sama
+       sekali di sini, jadi nilai delay per huruf di bawah tetep
+       kepakai. */
+    animation-name: handwriteIn;
+    animation-duration: 6s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+
+.connect-heading .letter:nth-child(1) { animation-delay: 0.00s; }
+.connect-heading .letter:nth-child(2) { animation-delay: 0.09s; }
+.connect-heading .letter:nth-child(3) { animation-delay: 0.18s; }
+.connect-heading .letter:nth-child(4) { animation-delay: 0.27s; }
+.connect-heading .letter:nth-child(5) { animation-delay: 0.36s; }
+.connect-heading .letter:nth-child(6) { animation-delay: 0.45s; }
+.connect-heading .letter:nth-child(7) { animation-delay: 0.54s; }
+.connect-heading .letter:nth-child(8) { animation-delay: 0.63s; }
+.connect-heading .letter:nth-child(9) { animation-delay: 0.72s; }
+.connect-heading .letter:nth-child(10) { animation-delay: 0.81s; }
+.connect-heading .letter:nth-child(11) { animation-delay: 0.90s; }
+.connect-heading .letter:nth-child(12) { animation-delay: 0.99s; }
+.connect-heading .letter:nth-child(13) { animation-delay: 1.08s; }
+.connect-heading .letter:nth-child(14) { animation-delay: 1.17s; }
+
+@keyframes handwriteIn {
+
+    /* 0% - 7.5% (setara 0 - 0.45s dari total 6s): nulis huruf masuk,
+       sama persis seperti animasi lama, cuma di-skala ke dalam
+       siklus 6s ini */
+    0% {
+        opacity: 0;
+        transform: translateY(18px) rotate(6deg);
+    }
+
+    4.5% {
+        opacity: 1;
+        transform: translateY(-4px) rotate(-4deg);
+    }
+
+    7.5% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    /* 7.5% - 80%: diam, tulisan tetap kelihatan penuh (jeda) */
+    80% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    /* 80% - 90%: "dihapus" lagi */
+    90% {
+        opacity: 0;
+        transform: translateY(-14px) rotate(-6deg);
+    }
+
+    /* 90% - 100%: diam kosong sebentar sebelum nulis ulang dari awal */
+    100% {
+        opacity: 0;
+        transform: translateY(18px) rotate(6deg);
+    }
+
+}
+
+.contact-sub {
+    font-family: "Kalam", cursive;
+
+    font-style: italic;
+
+    font-size: clamp(26px, 1.7vw, 19px);
+
+    font-weight: 400;
+
+    line-height: 1.5;
+
+    color: var(--red);
+
+    max-width: 460px;
+
+    transform: rotate(-3deg);
+}
+
+
+/* ---- ERROR 404 (aset gambar, dianimasikan glitch terus-menerus) ---- */
+
+.contact-error-wrap {
+    position: relative;
+    left:-587px;
+
+    width: min(90px, 42vw);
+    flex-shrink: 0;
+
+    margin-top: 80px;
+
+    transform: rotate(-3deg);
+}
+
+.contact-error {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    image-rendering: pixelated;
+}
+
+.contact-error-base {
+    position: relative;
+
+    z-index: 1;
+
+    animation: glitchShake 3.6s infinite;
+}
+
+/* Dua salinan gambar yang sama, diwarnai merah & biru lalu
+   ditumpuk pakai mix-blend-mode buat efek "chromatic aberration"
+   khas glitch, masing-masing geser sendiri-sendiri biar ga sinkron */
+.contact-error-glitch {
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    opacity: 0;
+
+    mix-blend-mode: screen;
+
+    pointer-events: none;
+}
+
+.contact-error-glitch-a {
+    filter: brightness(0) invert(21%) sepia(90%) saturate(6000%) hue-rotate(-8deg);
+
+    animation: glitchA 2.5s infinite steps(1, end);
+}
+
+.contact-error-glitch-b {
+    filter: brightness(0) invert(58%) sepia(90%) saturate(3000%) hue-rotate(150deg);
+
+    animation: glitchB 3.1s infinite steps(1, end);
+}
+
+@keyframes glitchShake {
+
+    0%, 92%, 100% {
+        transform: translate(0, 0) skewX(0deg);
+        filter: none;
+    }
+
+    93% {
+        transform: translate(-3px, 1px) skewX(-3deg);
+    }
+
+    94% {
+        transform: translate(3px, -1px) skewX(2deg);
+        filter: brightness(1.3);
+    }
+
+    95% {
+        transform: translate(-2px, 0) skewX(0deg);
+    }
+
+    96% {
+        transform: translate(2px, 1px);
+    }
+
+    97% {
+        transform: translate(0, -1px);
+    }
+
+}
+
+@keyframes glitchA {
+
+    0%, 100% { opacity: 0; transform: translate(0, 0); clip-path: inset(0 0 0 0); }
+    8%  { opacity: 0.8; transform: translate(-4px, 1px); clip-path: inset(10% 0 55% 0); }
+    9%  { opacity: 0; }
+    16% { opacity: 0.8; transform: translate(3px, 0); clip-path: inset(60% 0 5% 0); }
+    17% { opacity: 0; }
+    55% { opacity: 0.8; transform: translate(-3px, -1px); clip-path: inset(30% 0 30% 0); }
+    57% { opacity: 0; }
+
+}
+
+@keyframes glitchB {
+
+    0%, 100% { opacity: 0; transform: translate(0, 0); clip-path: inset(0 0 0 0); }
+    12% { opacity: 0.8; transform: translate(4px, -1px); clip-path: inset(45% 0 20% 0); }
+    13% { opacity: 0; }
+    20% { opacity: 0.8; transform: translate(-3px, 1px); clip-path: inset(5% 0 65% 0); }
+    21% { opacity: 0; }
+    70% { opacity: 0.8; transform: translate(3px, 1px); clip-path: inset(20% 0 45% 0); }
+    72% { opacity: 0; }
+
+}
+
+
+/* ---- Icon kontak (WhatsApp, Email, GitHub, LinkedIn) - disusun
+   "berserakan" kayak bulatan nempel di desain, posisinya dalam %
+   supaya ikut menyesuaikan pas di-resize ---- */
+
+.contact-icons-scatter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    gap: clamp(28px, 7.5vw, 150px);
+
+    width: fit-content;
+
+    margin: 10px 0 30px auto;
+}
+
+.contact-icon {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: clamp(56px, 6vw, 72px);
+    aspect-ratio: 1 / 1;
+
+    border-radius: 50%;
+
+    background: var(--blue);
+
+    color: var(--cream);
+
+    font-size: clamp(18px, 2vw, 24px);
+
+    box-shadow: 0 3px 0 rgba(3, 109, 154, 0.35);
+
+    text-decoration: none;
+
+    transition: transform 0.25s ease, background 0.25s ease;
+
+    animation: contactIconJump 1.6s ease-in-out infinite;
+}
+
+.contact-icon:hover,
+.contact-icon:focus-visible {
+    background: var(--red);
+
+    animation-play-state: paused;
+    transform: translateY(-6px);
+}
+
+@keyframes contactIconJump {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* Warna selang-seling biar tetap hidup, ukuran & posisinya tetap sama */
+
+.contact-icon-1 { animation-delay: 0s; }
+
+.contact-icon-2 {
+    background: var(--red);
+
+    box-shadow: 0 3px 0 rgba(187, 36, 10, 0.35);
+
+    animation-delay: 0.15s;
+}
+
+.contact-icon-3 { animation-delay: 0.3s; }
+
+.contact-icon-4 {
+    background: var(--red);
+
+    box-shadow: 0 3px 0 rgba(187, 36, 10, 0.35);
+
+    animation-delay: 0.45s;
+}
+
+.contact-icon-2:hover,
+.contact-icon-2:focus-visible,
+.contact-icon-4:hover,
+.contact-icon-4:focus-visible {
+    background: var(--blue);
+}
+
+
+/* ---- Kucing jalan terus-menerus persis di atas garis biru
+   .contact-footer, ngeloop dari kiri ke kanan tanpa henti ---- */
+
+.contact-cat-track {
+    position: relative;
+
+    width: 100%;
+    height: 70px;
+
+    overflow: hidden;
+}
+
+.contact-walk-cat {
+    position: absolute;
+
+    bottom: 0;
+    left: -100px;
+
+    width: 70px;
+    height: auto;
+
+    image-rendering: pixelated;
+
+    animation:
+        catWalk 9s linear infinite,
+        catBob 0.35s ease-in-out infinite alternate;
+}
+
+@keyframes catWalk {
+
+    from {
+        left: -100px;
+    }
+
+    to {
+        left: 100%;
+    }
+
+}
+
+@keyframes catBob {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-3px);
+    }
+
+}
+
+
+/* ---- Footer bar ---- */
+
+.contact-footer {
+    position: relative;
+
+    z-index: 2;
+
+    /* Full-width beneran (bukan cuma 100% dari kotak section yang
+       masih kepotong sama padding kiri-kanan .contact) - dipakai
+       trik "break out of container": lebar disamain ke lebar layar
+       (100vw), terus ditarik balik ke tengah pakai left:50% +
+       margin -50vw, biar garisnya bener-bener nempel ke tepi layar,
+       kiri maupun kanan. Padding kiri-kanannya diseting ulang biar
+       teks di dalemnya tetep sejajar sama konten lain di atasnya. */
+    width: 100vw;
+
+    left: 50%;
+    margin-left: -50vw;
+
+    margin-top: 0;
+
+    padding: 14px 7% 90px;
+
+    border-top: 3px solid var(--blue);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    font-family: "Nunito", sans-serif;
+
+    font-weight: 800;
+
+    font-size: clamp(12px, 1.5vw, 14.5px);
+
+    color: var(--red);
+}
+
+
+/* ---- Responsive ---- */
+
+@media (max-width: 700px) {
+
+    .contact {
+        padding: 70px 6% 0;
+    }
+
+    .contact-top {
+        flex-direction: column;
+    }
+
+    .contact-error-wrap {
+        width: min(220px, 60vw);
+    }
+
+    .contact-icons-scatter {
+        width: 100%;
+
+        justify-content: flex-end;
+
+        margin: 10px auto 20px;
+    }
+
+    .contact-footer {
+        padding: 14px 6% 80px;
+
+        text-align: center;
+
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .connect-heading {
+        font-size: 32px;
+    }
+
+    .contact-icons-scatter {
+        gap: 16px;
+    }
+
+}
+
+
+/* =========================================
+   BOTTOM NAVBAR
+========================================= */
+
+.bottom-nav {
+    width: fit-content;
+    max-width: 96vw;
+
+    position: fixed;
+
+    left: 50%;
+    bottom: 20px;
+
+    transform: translateX(-50%);
+
+    z-index: 999;
+
+    display: flex;
+    align-items: center;
+
+    gap: 4px;
+
+    background: rgba(255, 248, 231, 0.5);
+
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    backdrop-filter: blur(20px) saturate(160%);
+
+    border: 3px solid rgba(3, 109, 154, 0.6);
+
+    border-radius: 999px;
+
+    padding: 7px;
+
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+
+    /* Kalau tetep masih kepanjangan di layar sempit banget,
+       daripada overflow keluar layar, mending discroll
+       horizontal di dalam kapsulnya sendiri */
+    overflow-x: auto;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.bottom-nav::-webkit-scrollbar {
+    display: none;
+}
+
+/* Fallback: kalau browser-nya ga support backdrop-filter (blur),
+   background dibikin lebih solid/pekat - biar ga jadi transparan
+   mentah yang nembus ke gambar/konten di belakangnya kayak yang
+   sempet kejadian */
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+
+    .bottom-nav {
+        background: rgba(255, 248, 231, 0.96);
+    }
+
+}
+
+.bottom-nav-link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 6px 12px;
+
+    border-radius: 999px;
+
+    color: var(--blue);
+
+    text-decoration: none;
+
+    font-family: "Nunito", sans-serif;
+
+    font-weight: 800;
+
+    font-size: 14px;
+
+    letter-spacing: 0.3px;
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
+
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.bottom-nav-link i {
+    font-size: 16px;
+}
+
+.bottom-nav-link:hover,
+.bottom-nav-link:focus-visible {
+    background: rgba(3, 109, 154, 0.12);
+}
+
+.bottom-nav-link.active {
+    background: var(--red);
+
+    color: var(--cream);
+
+    box-shadow: 0 3px 0 rgba(187, 36, 10, 0.35);
+}
+
+.bottom-nav-link.active:hover {
+    background: var(--red);
+}
+
+
+@media (max-width: 700px) {
+
+    .bottom-nav {
+        bottom: 14px;
+
+        gap: 2px;
+
+        padding: 6px;
+    }
+
+    .bottom-nav-link {
+        padding: 10px 12px;
+    }
+
+    .bottom-nav-link span {
+        display: none;
+    }
+
+    .bottom-nav-link i {
+        font-size: 18px;
+    }
+
+}
